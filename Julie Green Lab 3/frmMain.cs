@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 /*
-    Project: Calculator
+    Project: Calculator 2.0
     Programmer: Julie Green
-    Date: Apr 16, 2016
+    Date: Apr 20, 2016
     Purpose: Performs simple calculations and math operations with two number inputs.
 */
 
-namespace Julie_Green_Lab_3
+namespace Julie_Green_Lab_4
 {
     public partial class frmMain : Form
     {
@@ -44,40 +44,62 @@ namespace Julie_Green_Lab_3
                 double dSecondNumber;
                 double dResult;
 
-                if(!double.TryParse(txtFirstNumber.Text, out dFirstNumber))
+                if (double.TryParse(txtFirstNumber.Text, out dFirstNumber))
+                {
+                    if (double.TryParse(txtSecondNumber.Text, out dSecondNumber))
+                    {
+                        if (chkMaxNumber.Checked && dFirstNumber > 100)
+                        {
+                            MessageBox.Show("First number must not be greater than 100.");
+                            txtFirstNumber.Focus();
+                            return;
+                        }
+
+                        if (chkMaxNumber.Checked && dSecondNumber > 100)
+                        {
+                            MessageBox.Show("Second number must not be greater than 100.");
+                            txtSecondNumber.Focus();
+                            return;
+                        }
+
+                        if (radAdd.Checked)
+                        {
+                            dResult = dFirstNumber + dSecondNumber;
+                            txtResult.Text = dResult.ToString("n1");
+                        }
+                        else if (radSubtract.Checked)
+                        {
+                            dResult = dFirstNumber - dSecondNumber;
+                            txtResult.Text = dResult.ToString("n1");
+                        }
+                        else if (radMultiply.Checked)
+                        {
+                            dResult = dFirstNumber * dSecondNumber;
+                            txtResult.Text = dResult.ToString("n1");
+                        }
+                        else if (radioDivide.Checked)
+                        {
+                            dResult = dFirstNumber / dSecondNumber;
+                            txtResult.Text = dResult.ToString("n1");
+                        }
+                        else
+                        {
+                            MessageBox.Show("You much check one of the operation buttons.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Second Number contains invalid data.");
+                        txtSecondNumber.Focus();
+                        return;
+                    }
+                }
+                else
                 {
                     MessageBox.Show("First Number contains invalid data.");
+                    txtFirstNumber.Focus();
+                    return;
                 }
-
-                if(!double.TryParse(txtSecondNumber.Text, out dSecondNumber))
-                {
-                    MessageBox.Show("Second Number contains invalid data.");
-                }
-
-                dFirstNumber = double.Parse(txtFirstNumber.Text);
-                dSecondNumber = double.Parse(txtSecondNumber.Text);
-
-                if (radAdd.Checked)
-                {
-                    dResult = dFirstNumber + dSecondNumber;
-                    txtResult.Text = dResult.ToString("n1");
-                } else if (radSubtract.Checked)
-                {
-                    dResult = dFirstNumber - dSecondNumber;
-                    txtResult.Text = dResult.ToString("n1");
-                } else if (radMultiply.Checked)
-                {
-                    dResult = dFirstNumber * dSecondNumber;
-                    txtResult.Text = dResult.ToString("n1");
-                } else if (radioDivide.Checked)
-                {
-                    dResult = dFirstNumber / dSecondNumber;
-                    txtResult.Text = dResult.ToString("n1");
-                } else
-                {
-                    MessageBox.Show("You much check one of the operation buttons.");
-                }
-
             }
             catch (Exception ex)
             {

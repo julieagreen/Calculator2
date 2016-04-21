@@ -1,4 +1,4 @@
-﻿namespace Julie_Green_Lab_3
+﻿namespace Julie_Green_Lab_4
 {
     partial class frmMain
     {
@@ -38,11 +38,11 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radAdd = new System.Windows.Forms.RadioButton();
-            this.radSubtract = new System.Windows.Forms.RadioButton();
-            this.radMultiply = new System.Windows.Forms.RadioButton();
             this.radioDivide = new System.Windows.Forms.RadioButton();
-            this.chkMaxMaster = new System.Windows.Forms.CheckBox();
+            this.radMultiply = new System.Windows.Forms.RadioButton();
+            this.radSubtract = new System.Windows.Forms.RadioButton();
+            this.radAdd = new System.Windows.Forms.RadioButton();
+            this.chkMaxNumber = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(152, 26);
-            this.txtResult.TabIndex = 5;
+            this.txtResult.TabIndex = 0;
             this.txtResult.TabStop = false;
             this.txtResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -78,7 +78,7 @@
             this.txtSecondNumber.Location = new System.Drawing.Point(167, 65);
             this.txtSecondNumber.Name = "txtSecondNumber";
             this.txtSecondNumber.Size = new System.Drawing.Size(153, 26);
-            this.txtSecondNumber.TabIndex = 2;
+            this.txtSecondNumber.TabIndex = 1;
             this.txtSecondNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtFirstNumber
@@ -87,7 +87,7 @@
             this.txtFirstNumber.Location = new System.Drawing.Point(167, 23);
             this.txtFirstNumber.Name = "txtFirstNumber";
             this.txtFirstNumber.Size = new System.Drawing.Size(152, 26);
-            this.txtFirstNumber.TabIndex = 1;
+            this.txtFirstNumber.TabIndex = 0;
             this.txtFirstNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -126,7 +126,8 @@
             this.btnClear.Location = new System.Drawing.Point(548, 115);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(109, 34);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 0;
+            this.btnClear.TabStop = false;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -137,7 +138,7 @@
             this.btnCalculate.Location = new System.Drawing.Point(548, 68);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(108, 36);
-            this.btnCalculate.TabIndex = 10;
+            this.btnCalculate.TabIndex = 4;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -152,42 +153,9 @@
             this.groupBox2.Location = new System.Drawing.Point(402, 52);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(125, 142);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Operation";
-            // 
-            // radAdd
-            // 
-            this.radAdd.AutoSize = true;
-            this.radAdd.Location = new System.Drawing.Point(23, 25);
-            this.radAdd.Name = "radAdd";
-            this.radAdd.Size = new System.Drawing.Size(51, 20);
-            this.radAdd.TabIndex = 0;
-            this.radAdd.TabStop = true;
-            this.radAdd.Text = "Add";
-            this.radAdd.UseVisualStyleBackColor = true;
-            // 
-            // radSubtract
-            // 
-            this.radSubtract.AutoSize = true;
-            this.radSubtract.Location = new System.Drawing.Point(23, 51);
-            this.radSubtract.Name = "radSubtract";
-            this.radSubtract.Size = new System.Drawing.Size(75, 20);
-            this.radSubtract.TabIndex = 1;
-            this.radSubtract.TabStop = true;
-            this.radSubtract.Text = "Subtract";
-            this.radSubtract.UseVisualStyleBackColor = true;
-            // 
-            // radMultiply
-            // 
-            this.radMultiply.AutoSize = true;
-            this.radMultiply.Location = new System.Drawing.Point(23, 77);
-            this.radMultiply.Name = "radMultiply";
-            this.radMultiply.Size = new System.Drawing.Size(71, 20);
-            this.radMultiply.TabIndex = 2;
-            this.radMultiply.TabStop = true;
-            this.radMultiply.Text = "Multiply";
-            this.radMultiply.UseVisualStyleBackColor = true;
             // 
             // radioDivide
             // 
@@ -195,28 +163,58 @@
             this.radioDivide.Location = new System.Drawing.Point(23, 102);
             this.radioDivide.Name = "radioDivide";
             this.radioDivide.Size = new System.Drawing.Size(65, 20);
-            this.radioDivide.TabIndex = 3;
-            this.radioDivide.TabStop = true;
+            this.radioDivide.TabIndex = 0;
             this.radioDivide.Text = "Divide";
             this.radioDivide.UseVisualStyleBackColor = true;
             // 
-            // chkMaxMaster
+            // radMultiply
             // 
-            this.chkMaxMaster.AutoSize = true;
-            this.chkMaxMaster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMaxMaster.Location = new System.Drawing.Point(402, 204);
-            this.chkMaxMaster.Name = "chkMaxMaster";
-            this.chkMaxMaster.Size = new System.Drawing.Size(251, 20);
-            this.chkMaxMaster.TabIndex = 12;
-            this.chkMaxMaster.Text = "Numbers must not be greater than 100";
-            this.chkMaxMaster.UseVisualStyleBackColor = true;
+            this.radMultiply.AutoSize = true;
+            this.radMultiply.Location = new System.Drawing.Point(23, 77);
+            this.radMultiply.Name = "radMultiply";
+            this.radMultiply.Size = new System.Drawing.Size(71, 20);
+            this.radMultiply.TabIndex = 0;
+            this.radMultiply.Text = "Multiply";
+            this.radMultiply.UseVisualStyleBackColor = true;
+            // 
+            // radSubtract
+            // 
+            this.radSubtract.AutoSize = true;
+            this.radSubtract.Location = new System.Drawing.Point(23, 51);
+            this.radSubtract.Name = "radSubtract";
+            this.radSubtract.Size = new System.Drawing.Size(75, 20);
+            this.radSubtract.TabIndex = 0;
+            this.radSubtract.Text = "Subtract";
+            this.radSubtract.UseVisualStyleBackColor = true;
+            // 
+            // radAdd
+            // 
+            this.radAdd.AutoSize = true;
+            this.radAdd.Location = new System.Drawing.Point(23, 25);
+            this.radAdd.Name = "radAdd";
+            this.radAdd.Size = new System.Drawing.Size(51, 20);
+            this.radAdd.TabIndex = 2;
+            this.radAdd.TabStop = true;
+            this.radAdd.Text = "Add";
+            this.radAdd.UseVisualStyleBackColor = true;
+            // 
+            // chkMaxNumber
+            // 
+            this.chkMaxNumber.AutoSize = true;
+            this.chkMaxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMaxNumber.Location = new System.Drawing.Point(402, 204);
+            this.chkMaxNumber.Name = "chkMaxNumber";
+            this.chkMaxNumber.Size = new System.Drawing.Size(251, 20);
+            this.chkMaxNumber.TabIndex = 3;
+            this.chkMaxNumber.Text = "Numbers must not be greater than 100";
+            this.chkMaxNumber.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 252);
-            this.Controls.Add(this.chkMaxMaster);
+            this.Controls.Add(this.chkMaxNumber);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.btnClear);
@@ -252,7 +250,7 @@
         private System.Windows.Forms.RadioButton radMultiply;
         private System.Windows.Forms.RadioButton radSubtract;
         private System.Windows.Forms.RadioButton radAdd;
-        private System.Windows.Forms.CheckBox chkMaxMaster;
+        private System.Windows.Forms.CheckBox chkMaxNumber;
     }
 }
 

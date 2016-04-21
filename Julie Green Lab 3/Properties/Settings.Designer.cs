@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Julie_Green_Lab_3.Properties
+namespace Julie_Green_Lab_4.Properties
 {
 
 
